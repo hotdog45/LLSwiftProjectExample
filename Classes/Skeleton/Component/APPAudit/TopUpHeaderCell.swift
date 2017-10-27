@@ -3,8 +3,8 @@
 //  KDTK
 //
 //  Created by 李顺风 on 2017/6/13.
-//  Copyright © 2017年 ZHIWU.technology. All rights reserved.
-//
+//  Copyright © 2017年 lishunfeng.org. All rights reserved.
+//lishunfeng.org
 
 import UIKit
 

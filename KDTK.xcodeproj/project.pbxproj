@@ -1117,7 +1117,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = ZHIWU.technology;
+				ORGANIZATIONNAME = lishunfeng.org;
 				TargetAttributes = {
 					9E290D6A1E1C973600D2B118 = {
 						CreatedOnToolsVersion = 8.2.1;
