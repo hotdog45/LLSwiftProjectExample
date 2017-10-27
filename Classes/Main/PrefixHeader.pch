@@ -1,0 +1,122 @@
+//
+//  PrefixHeader.pch
+//  KDTK
+//
+//  Created by 李顺风 on 2017/2/17.
+//  Copyright © 2017年 ZHIWU.technology. All rights reserved.
+//
+#ifdef __OBJC__
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "OpenShareHeader.h"
+
+#if DEBUG// 判断是否在测试环境下
+#define APIURL  @"http://api.koudaitiku.net"
+#else
+#define APIURL  @"http://api.koudaitiku.com"
+#endif
+/***    我的小组[/zone/member/groups.htm]    ***/
+#define ZoneMemberGroups  @"/zone/member/groups.htm"
+
+/***    小组成员[/zone/group/members.htm]    ***/
+#define ZoneGroupMembers @"/zone/group/members.htm"
+
+
+
+//// 分享
+//#define OPEN(schema) [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:schema]]
+//
+//
+//// 颜色定义
+//#define COLOR_RGB(rgbValue) [UIColor \
+//colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+//green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+//blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+//
+//#define COLOR_RGBA(rgbValue,a) [UIColor \
+//colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+//green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+//blue:((float)(rgbValue & 0xFF))/255.0 alpha:(a)]
+//
+//// 屏幕尺寸
+//#define SCREEN_RATIO (([UIScreen mainScreen].bounds.size.width)/320.0)
+//#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+//#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+//#define CONTENT_HEIGHT [UIScreen mainScreen].bounds.size.height - NAV_HEIGHT
+//#define NAV_HEIGHT 64
+//#define TAB_HEIGHT 49
+//#define BAR_HEIGHT 44
+//#define STATUS_BAR_HEIGHT 20
+//
+//// View Frame
+//#define WIDTH(view) view.frame.size.width
+//#define HEIGHT(view) view.frame.size.height
+//#define X(view) view.frame.origin.x
+//#define Y(view) view.frame.origin.y
+//#define LEFT(view) view.frame.origin.x
+//#define TOP(view) view.frame.origin.y
+//#define BOTTOM(view) (view.frame.origin.y + view.frame.size.height)
+//#define RIGHT(view) (view.frame.origin.x + view.frame.size.width)
+//
+////brandcolor
+//#define COLOR_BRAND COLOR_RGB(0xFBCD03)
+//#define COLOR_ORANGE COLOR_RGB(0xF87C00)
+//#define COLOR_BLUE COLOR_RGB(0x6198FF)
+//#define COLOR_BLACK COLOR_RGB(0x000000)
+//#define COLOR_WHITE COLOR_RGB(0xFFFFFF)
+//#define COLOR_GRAY01 COLOR_RGB(0x7D7D7D)
+//#define COLOR_GRAY02 COLOR_RGB(0xAEAEAE)
+//#define COLOR_SPLIT COLOR_RGB(0xDFDFDF)
+//#define COLOR_BACKGROUND COLOR_RGB(0xF3F3F3)
+//#define COLOR_RED COLOR_RGB(0xEE4550)
+//#define COLOR_BACKGROUND_NT COLOR_RGB(0x19181B)
+//
+//
+//
+//
+//// 系统版本
+//#define SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
+//#define IS_IPHONE_5 ((double)[[ UIScreen mainScreen] bounds].size.height - (double)667 < 0 )
+//#define IS_IPHONE_6 (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double)667) < DBL_EPSILON)
+//#define IS_IPHONE_PLUS (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double)667) > DBL_EPSILON)
+//#define NET_DESP (model.errorDescription && model.errorDescription.length > 0) ? model.errorDescription : NSLocalizedString(@"Network Error", nil)
+//#define BIND_DESP (model.errorDescription && model.errorDescription.length > 0) ? model.errorDescription : @"绑定失败"
+//#define SERVER_ERROR NSLocalizedString(@"Server Error", nil)
+//#define NETWORK_ERROR NSLocalizedString(@"Network Error", nil)
+//
+//// 环境切换
+//#define BUILD_ENV_PRODUCTION  1       //线上环境
+//#define BUILD_ENV_STAGING 2           //预发环境
+//
+////内存管理
+//#define WEAKSELF typeof(self) __weak weakSelf = self;
+//
+////线程安全
+//#define dispatch_main_sync_safe(block)\
+//if ([NSThread isMainThread]) {\
+//block();\
+//} else {\
+//dispatch_sync(dispatch_get_main_queue(), block);\
+//}
+
+
+
+
+
+#import <CocoaLumberjack/CocoaLumberjack.h>
+
+#ifdef DEBUG
+static DDLogLevel ddLogLevel = DDLogLevelVerbose;
+#else
+static DDLogLevel ddLogLevel = DDLogLevelInfo;
+#endif
+
+#define NTES_USE_CLEAR_BAR - (BOOL)useClearBar{return YES;}
+
+#define NTES_FORBID_INTERACTIVE_POP - (BOOL)forbidInteractivePop{return YES;}
+
+
+
+#endif /* PrefixHeader_pch */
+#endif
